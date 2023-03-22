@@ -153,6 +153,7 @@ div.card .card-date{
 }
 
 /* Event Page */
+
 #info-container,
 #image-container{
     margin-top: 30px;
@@ -161,7 +162,7 @@ div.card .card-date{
 #image-container img{
     border-radius: 10px;
 }
-#info-container{
+#info-container h3{
     font-size: 36px;
     font-weight: 900;
 }
@@ -188,6 +189,15 @@ div.card .card-date{
     margin: 20px 0;
 }
 
+#items-list{
+    list-style: none;
+    padding-left: 0px;
+}
+
+#items-list li {
+    display: flex;
+    align-items: center;
+}
 
 /* Footer */
 
