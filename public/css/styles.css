@@ -1,0 +1,166 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header{
+    background: white;
+    border-bottom: 1px solid #CCC;
+}
+
+div.row{
+    margin: 0px;
+}   
+
+div.container-fluid{
+    padding: 0px;
+}
+
+a.btn-primary{
+    background: #F2A340;
+    border: 2px solid #C28008;
+}
+
+a.btn-primary:hover{
+    background: #C28008;
+    border-color: #C28008;
+}
+
+.msg{
+    background-color: rgba(0, 128, 0, 0.15);
+    color: #155724;
+    border: 1 solid #C3E6CB;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+#navbar img {
+    width: 40px;
+} 
+
+#navbar{
+    justify-content: space-between;
+    background: white;
+    padding: 5px 0px;
+}
+
+#navbar a {
+    font-size: 14px;
+    color: #757575;
+}
+
+#navbar a:hover{
+    color: #F2A340;
+}
+
+div#search-container{
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 50px;
+    text-align: center;
+    
+}
+
+div#search-container h1{
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+div#search-container form {
+    width: 50vw;
+    margin: auto;
+}
+
+div#events-container{
+    padding:50px;
+}
+
+div#events-container h2{
+    margin-bottom: 10px;
+}
+
+div#events-container .subtitle{
+    color: black;
+    margin-bottom: 30px;
+}
+
+div#cards-container{
+    display: flex;
+}
+
+#events-container .card {
+    flex: 0 1 24%;
+    max-width: 25%;
+    min-width: 256px;
+    border-radius: 10px;
+    padding: 0px;
+    margin: .5%;
+}
+
+
+#events-container img {
+    max-height: 150px;
+    border-radius: 10px 10px 0 0;
+}
+
+div.card .card-date{
+    font-size: 14px;
+    color: #CCC;
+}
+
+.card .card-title{
+    color: #212121;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card .card-participants{
+    font-size: 14px;
+    color: #757575;
+}
+
+#event-create-container{
+    padding: 30px;
+}
+
+#event-create-container label{
+    font-weight: bold;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-containe textarea{
+    font-size: 12px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+
+
+footer{
+    text-align: center;
+    background-color: #353E48;
+    color: white;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0px;
+}
+
