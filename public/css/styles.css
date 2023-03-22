@@ -1,3 +1,5 @@
+/* All pages */
+
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -40,7 +42,7 @@ a.btn-primary:hover{
     padding: 10px;
     margin-bottom: 0;
 }
-
+/* NavBar */
 #navbar img {
     width: 40px;
 } 
@@ -59,6 +61,8 @@ a.btn-primary:hover{
 #navbar a:hover{
     color: #F2A340;
 }
+
+/* Events-page */
 
 div#search-container{
     background-image: url('../img/banner.jpg');
@@ -148,7 +152,44 @@ div.card .card-date{
     margin-bottom: 20px;
 }
 
+/* Event Page */
+#info-container,
+#image-container{
+    margin-top: 30px;
+}
 
+#image-container img{
+    border-radius: 10px;
+}
+#info-container{
+    font-size: 36px;
+    font-weight: 900;
+}
+
+#info-container p{
+    margin: 0px;
+    font-size: 14px;
+    display: flex;
+}
+
+#info-container h3,
+#description-caontainer h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#info-container ion-icon{
+    font-size: 20px;
+    color: #F2A340;
+    margin: 0 5px;
+}
+
+#info-container #event-submit{
+    margin: 20px 0;
+}
+
+
+/* Footer */
 
 footer{
     text-align: center;

@@ -31,7 +31,6 @@ class EventController extends Controller
 
         if($request->hasFile('image') && $request->file('image')->isValid()){
 
-            
             $requestImage = $request->image;
 
             $extension = $requestImage->extension();
@@ -47,6 +46,12 @@ class EventController extends Controller
         $event->save();
 
         return redirect('/')->with('msg','Evento Criado com Sucesso!');
-    }   
+    }
+
+    public function show($id){
+        $event = Event::FindOrFail($id);
+
+        return view('events.show',['event'=> $event]);
+    }
 
 }
