@@ -175,9 +175,10 @@ div.card .card-date{
 }
 
 #info-container h3,
-#description-caontainer h3{
+#description-container h3{
     font-size: 20px;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 #info-container ion-icon{
