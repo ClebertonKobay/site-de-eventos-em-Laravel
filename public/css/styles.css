@@ -211,6 +211,15 @@ div.dashboard-title-container{
     width: 25%;
 }
 
+.dashboard-events-container form{
+    display: inline-block;
+}
+/* Edit */
+
+.img-preview{
+    width: 300px;
+    margin: 20px;
+}
 
 /* Footer */
 
