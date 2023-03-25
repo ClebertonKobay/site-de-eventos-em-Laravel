@@ -201,6 +201,17 @@ div.card .card-date{
     align-items: center;
 }
 
+/* DashBoard */
+
+div.dashboard-title-container{
+    margin:30px auto;
+}
+
+.dashboard-events-container th{
+    width: 25%;
+}
+
+
 /* Footer */
 
 footer{

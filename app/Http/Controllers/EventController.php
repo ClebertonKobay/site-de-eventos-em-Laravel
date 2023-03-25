@@ -55,6 +55,8 @@ class EventController extends Controller
 
             $event->image = $imageName;
 
+        }else if(!$request->hasFile('image')){
+            $event->image = "event_placeholder.jpg";
         }
         
         $user = auth()->user();
@@ -75,6 +77,16 @@ class EventController extends Controller
         [
             'event'=> $event,
             'eventOwner'=> $eventOwner
+        ]);
+    }
+
+    public function  dashboard(){
+        $user = auth()->user();
+
+        $events = $user->events;
+
+        return view('events.dashboard',[
+                'events'=>$events
         ]);
     }
 
