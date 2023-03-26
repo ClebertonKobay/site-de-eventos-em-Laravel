@@ -85,8 +85,12 @@ class EventController extends Controller
 
         $events = $user->events;
 
+        $eventsAsparticipant = $user->eventsAsParticipant();
+
+
         return view('events.dashboard',[
-                'events'=>$events
+                'events'=>$events,
+                'eventsAsp' => $eventsAsparticipant
         ]);
     }
 
@@ -123,5 +127,15 @@ class EventController extends Controller
         Event::findOrfail($request->id)->update($data);
 
         return redirect('/dashboard')->with('msg','Evento editado com sucesso');
+    }
+
+    public function joinEvent($id){
+        $user = auth()->user();
+
+        $user->eventsAsParticipant()->attach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/')->with('msg','Sua presença está confirma no evento: ' . $event->title);
     }
 }
