@@ -33,6 +33,13 @@ a.btn-primary:hover{
     border-color: #C28008;
 }
 
+#btn-sair{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .msg{
     background-color: rgba(0, 128, 0, 0.15);
     color: #155724;

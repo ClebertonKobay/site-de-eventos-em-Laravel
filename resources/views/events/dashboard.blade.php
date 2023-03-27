@@ -52,7 +52,7 @@
     </div>
     <div class="col-md-10 offset-md-1 dashboard-events-container">
         
-        @if (true)
+        @if (count($eventsAsparticipant) > 0)
         <table class="table">
             <thead>
                 <tr>
@@ -63,12 +63,20 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($eventsAsp as $event)
+                @foreach ($eventsAsparticipant as $event)
                     <tr>
                         <td scope="row" >{{ $loop->index + 1 }}</td>
                         <td scope="row" > <a href="/events/{{$event->id}}">{{ $event->title }}</a> </td>
                         <td scope="row" >{{count($event->users)}}</td>
                         <td scope="row" >
+                            <form action="/events/leave/{{$event->id}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger delete-btn">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                    Sair
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

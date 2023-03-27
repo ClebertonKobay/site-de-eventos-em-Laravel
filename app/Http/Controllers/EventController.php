@@ -71,12 +71,25 @@ class EventController extends Controller
     public function show($id){
         $event = Event::FindOrFail($id);
 
+        $user = auth()->user();
+        $hasUserJoined = false;
+        
+        if($user){
+            $userEvents = $user->eventsAsParticipant->toArray();
+            foreach($userEvents as $userEvent){
+                if($id == $userEvent['id']){
+                    $hasUserJoined = true;
+                }
+            }    
+        }
+
         $eventOwner = User::where('id',$event->user_id)->first()->toArray();
 
         return view('events.show',
         [
             'event'=> $event,
-            'eventOwner'=> $eventOwner
+            'eventOwner'=> $eventOwner,
+            'hasUserJoined'=>$hasUserJoined
         ]);
     }
 
@@ -85,12 +98,12 @@ class EventController extends Controller
 
         $events = $user->events;
 
-        $eventsAsparticipant = $user->eventsAsParticipant();
+        $eventsAsparticipant = $user->getEventsAsParticipant();
 
 
         return view('events.dashboard',[
                 'events'=>$events,
-                'eventsAsp' => $eventsAsparticipant
+                'eventsAsparticipant' => $eventsAsparticipant
         ]);
     }
 
@@ -132,10 +145,20 @@ class EventController extends Controller
     public function joinEvent($id){
         $user = auth()->user();
 
+        $event = Event::findOrFail($id);
+
         $user->eventsAsParticipant()->attach($id);
+
+        return redirect()->back()->with('msg','Sua presença está confirma no evento: ' . $event->title);
+    }
+
+    public function leaveEvent($id){
+        $user = auth()->user();
 
         $event = Event::findOrFail($id);
 
-        return redirect('/')->with('msg','Sua presença está confirma no evento: ' . $event->title);
+        $user->eventsAsParticipant()->detach($id);
+
+        return redirect()->back()->with('msg','Você saiu do evento: ' . $event->title);
     }
 }
